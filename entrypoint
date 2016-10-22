@@ -1,0 +1,11 @@
+#!/bin/bash
+set -eu
+
+cd /srv
+mkdir -p cache log run
+if [ ! -d file ]; then
+    cp -a /opt/saku/file.original file
+fi
+
+exec "$@"
+# vim: ft=sh
