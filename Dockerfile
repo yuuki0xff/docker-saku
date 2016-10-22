@@ -18,6 +18,5 @@ RUN set -euv && \
     ln -s /srv/run .
 ADD ./saku.ini ./spam.txt /opt/saku/file.original/
 
-USER saku
 ENTRYPOINT ["/usr/local/bin/entrypoint"]
 CMD ["python3", "/opt/saku/saku.py"]

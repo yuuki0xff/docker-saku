@@ -7,5 +7,5 @@ if [ ! -d file ]; then
     cp -a /opt/saku/file.original file
 fi
 
-exec "$@"
+exec runuser -u saku -- "$@"
 # vim: ft=sh
