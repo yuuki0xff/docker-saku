@@ -16,6 +16,7 @@ RUN set -euv && \
     ln -s /srv/file . && \
     ln -s /srv/log . && \
     ln -s /srv/run .
+ADD ./saku.ini ./spam.txt /opt/saku/file.original/
 
 USER saku
 ENTRYPOINT ["/entrypoint"]
