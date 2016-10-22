@@ -2,7 +2,7 @@ FROM python:3
 MAINTAINER yuuki0xff <yuuki0xff@gmail.com>
 EXPOSE 8000
 VOLUME /srv
-ADD entrypoint /
+ADD ./entrypoint /usr/local/bin
 
 RUN set -euv && \
     useradd saku && \
@@ -19,5 +19,5 @@ RUN set -euv && \
 ADD ./saku.ini ./spam.txt /opt/saku/file.original/
 
 USER saku
-ENTRYPOINT ["/entrypoint"]
+ENTRYPOINT ["/usr/local/bin/entrypoint"]
 CMD ["python3", "/opt/saku/saku.py"]
