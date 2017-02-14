@@ -7,7 +7,6 @@ ADD ./entrypoint /usr/local/bin
 RUN set -euv && \
     useradd saku && \
     mkdir -p /opt/saku /srv && \
-    chown saku:saku /srv && \
     \
     cd /opt/saku && \
     git clone --depth=1 https://github.com/shingetsu/saku . && \
