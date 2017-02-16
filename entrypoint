@@ -8,5 +8,5 @@ if [ ! -d file ]; then
 fi
 
 chown -R saku:saku /srv
-exec runuser -u saku -- "$@"
+exec runuser -f -u saku -- "$@"
 # vim: ft=sh
