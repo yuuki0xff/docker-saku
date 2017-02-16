@@ -14,7 +14,12 @@ RUN set -euv && \
     ln -s /srv/cache . && \
     ln -s /srv/file . && \
     ln -s /srv/log . && \
-    ln -s /srv/run .
+    ln -s /srv/run . && \
+    \
+    cd /tmp && \
+    wget https://github.com/ncopa/su-exec/raw/v0.2/su-exec.c && \
+    gcc -o /usr/local/bin/su-exec su-exec.c && \
+    rm /tmp/su-exec.c
 ADD ./saku.ini ./spam.txt /opt/saku/file.original/
 
 ENTRYPOINT ["/usr/local/bin/entrypoint"]
