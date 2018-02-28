@@ -18,7 +18,9 @@ RUN set -euv && \
     ln -s /srv/cache . && \
     ln -s /srv/file . && \
     ln -s /srv/log . && \
-    ln -s /srv/run .
+    ln -s /srv/run . && \
+    \
+	pip install markupsafe
 ADD ./saku.ini ./spam.txt /opt/saku/file.original/
 
 ENTRYPOINT ["/usr/local/bin/entrypoint"]
